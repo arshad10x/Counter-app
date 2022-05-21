@@ -9,8 +9,6 @@ class App extends React.Component {
       count: 0,
 
     };
-    this.incrementCount=this.incrementCount.bind(this);
-    this.decrementCount=this.decrementCount.bind(this);
   }
   incrementCount=()=> {
     this.setState({
@@ -19,10 +17,12 @@ class App extends React.Component {
 
   }
   decrementCount=()=> {
+    if(this.state.count>0){
     this.setState({
       count: this.state.count -1
     });
-  }
+  }}
+  
   resetValue = () => {
     this.setState({
       count:this.state.count=0
